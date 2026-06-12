@@ -1,0 +1,132 @@
+.profile-page{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#f1f5f9;
+}
+
+.card{
+  width:700px;
+  background:white;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.card h2{
+  text-align:center;
+  color:#2563eb;
+}
+
+.avatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin:auto;
+}
+
+input,
+textarea{
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:8px;
+}
+
+button{
+  padding:12px;
+  border:none;
+  background:#2563eb;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#1d4ed8;
+}
+
+/* Container holding avatar and icon relative to each other */
+.avatar-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px auto; /* Centers container grid block inside card */
+}
+
+/* Ensure the image takes up full room of the container */
+.avatar-container .avatar {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 2px solid #e2e8f0;
+}
+
+/* Small floating round edit badge button overlay */
+.edit-avatar-badge {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.edit-avatar-badge:hover {
+  background: #1d4ed8;
+  transform: scale(1.08); /* Small zoom feedback on mouse-over */
+}
+
+/* Upload Notification Alert Box styling */
+.upload-alert {
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Green design block when upload completes successfully */
+.upload-alert.success {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+/* Light blue neutral styling state while hitting the server API endpoint */
+.upload-alert.loading {
+  background-color: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #3b82f6;
+}
+
+/* Smooth fade-in transition when state triggers mounting */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
